@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b9b407a6775e49eba9c610f8a177792, type: 3}
+  m_Name: AShonEnemyWordsData 1
+  m_EditorClassIdentifier: 
+  enemyWordPairs:
+  - displayWord: "\u79CB\u8449"
+    internalWord: "\u3042\u304D\u3070"
+    voiceClip: {fileID: 8300000, guid: 216291a1305ad4c7fb961d7d8c5e75b4, type: 3}
+  - displayWord: "\u51B7\u6C34"
+    internalWord: "\u308C\u3044\u3059\u3044"
+    voiceClip: {fileID: 8300000, guid: 1abad1e5d6d7b41fdad1a535b6b1d339, type: 3}
+  - displayWord: "\u5473\u65B9"
+    internalWord: "\u307F\u304B\u305F"
+    voiceClip: {fileID: 8300000, guid: 79989d8684ca047ee807d4a8484290b5, type: 3}
+  - displayWord: "\u4FDD\u5742"
+    internalWord: "\u307B\u3055\u304B"
+    voiceClip: {fileID: 8300000, guid: 5118376671a1a42529dafaaf4e02900d, type: 3}
