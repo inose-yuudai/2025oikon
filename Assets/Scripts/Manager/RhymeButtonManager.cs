@@ -9,7 +9,7 @@ public class RhymeButtonManager : MonoBehaviour
     [SerializeField] private RhymeButton[] rhymeButtons;
 
     /// <summary>
-    ///敵の単語に基づいてボタンをセットアップ
+    /// 敵の単語に基づいてボタンをセットアップ
     /// </summary>
     public void SetupButtonsForTurn(string[] enemyWords)
     {
@@ -19,11 +19,17 @@ public class RhymeButtonManager : MonoBehaviour
             return;
         }
 
+        // スペシャルワードリスト（条件を満たしている場合、無条件で1件取得）
+        var specialWords = GetSpecialWords(enemyWords);
+
+        // スペシャルワードが取得された場合は、正解単語は1件、それ以外の場合は2件取得する
+        int correctWordCount = specialWords.Length > 0 ? 1 : 2;
+
         // 韻が合う単語リスト
         var correctWords = playerWordData.playerWordPairs
             .Where(pair => enemyWords.Any(enemy => rhymeChecker.IsRhyme(enemy, pair.internalWord, 3)))
             .OrderBy(_ => Random.value)
-            .Take(2)
+            .Take(correctWordCount)
             .ToArray();
 
         // 韻が合わない単語リスト
@@ -33,14 +39,43 @@ public class RhymeButtonManager : MonoBehaviour
             .Take(2)
             .ToArray();
 
-        // 正解と不正解を混ぜてランダム配置
-        var allWords = correctWords.Concat(wrongWords).OrderBy(_ => Random.value).ToArray();
+        // 正解・スペシャル・不正解を混ぜてランダム配置
+        var allWords = specialWords.Concat(correctWords).Concat(wrongWords).OrderBy(_ => Random.value).ToArray();
 
         // ボタンにセット
         for (int i = 0; i < rhymeButtons.Length; i++)
         {
             rhymeButtons[i].SetWord(allWords[i]);
         }
+    }
+
+    /// <summary>
+    /// スペシャルワードを取得する
+    /// </summary>
+    private PlayerWordPair[] GetSpecialWords(string[] enemyWords)
+    {
+        if (ShouldCallSpecialWords())
+        {
+            // 条件を満たしている場合は、enemyWordsの韻チェックはせずに全specialWordPairsからランダムに1件取得
+            var specialWords = playerWordData.specialWordPairs
+                .OrderBy(_ => Random.value)
+                .Take(1)
+                .ToArray();
+            return specialWords;
+        }
+
+        return new PlayerWordPair[0];
+    }
+
+    /// <summary>
+    /// スペシャルワードを呼ぶべきかどうかを判定する
+    /// </summary>
+    private bool ShouldCallSpecialWords()
+    {
+        // 例: スペースキーが押されていたら true を返す
+        var shouldCall = Input.GetKey(KeyCode.Space);
+
+        return shouldCall;
     }
 
     /// <summary>
@@ -73,8 +108,7 @@ public class RhymeButtonManager : MonoBehaviour
     {
         foreach (var btn in rhymeButtons)
         {
-            // ★ ここでエラーになる場合は、
-            //   RhymeButton に public bool interactable { ... } が実装されているかを確認する
+            // ★ ここでエラーになる場合は、 RhymeButton に public bool interactable { ... } が実装されているかを確認する
             btn.interactable = canInteract;
         }
     }

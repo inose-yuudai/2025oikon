@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
             return;
         }
         enemyWordPresenter.SetEnemyWordsData(newData);
+        Debug.Log($"EnemyWordsData を {newData.name} にセットしました");
     }
 
     /// <summary>
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void StartNewTurn()
     {
+        Debug.Log("新しいターンを開始します");
         if (!isGameStart)
         {
             timeManager.StartTimer();
@@ -57,7 +59,10 @@ public class GameManager : MonoBehaviour
 
         // 敵の単語を2つ選んで表示
         enemyWordPresenter.ShowRandomEnemyWords();
+            Debug.Log("ゲームを開始します");
         currentEnemyWords = enemyWordPresenter.CurrentEnemyWords;
+
+        Debug.Log($"敵の単語: {currentEnemyWords[0]}, {currentEnemyWords[1]}");
 
         // 韻が合う選択肢を含むボタンをセットアップ
         rhymeButtonManager.SetupButtonsForTurn(currentEnemyWords);
