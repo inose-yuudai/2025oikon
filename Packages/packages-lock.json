@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
+      "depth": 0,
+      "source": "builtin",
+      "dependencies": {}
+    },
     "com.unity.collab-proxy": {
       "version": "2.6.0",
       "depth": 0,
@@ -40,8 +46,8 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {
-        "com.unity.modules.uielements": "1.0.0",
-        "com.unity.timeline": "1.2.18"
+        "com.unity.timeline": "1.2.18",
+        "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
