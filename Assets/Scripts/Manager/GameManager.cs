@@ -18,8 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip correctSound;                       // 正解音
 
     [Header("エフェクト表示位置")]
-    [SerializeField] private Vector3 leftEffectPosition = new Vector3(-5, 0, 0);
-    [SerializeField] private Vector3 rightEffectPosition = new Vector3(5, 0, 0);
+    [SerializeField] private Vector3 EffectPosition = new Vector3(5, 0, 0);
 
     [Header("エフェクト間隔(秒)")]
     [SerializeField] private float effectDelay = 0.5f;
@@ -144,10 +143,10 @@ public class GameManager : MonoBehaviour
             );
         }
 
-        ShowEffect(isCorrect[0], leftEffectPosition);
+        ShowEffect(isCorrect[0], EffectPosition);
         yield return new WaitForSeconds(effectDelay);
 
-        ShowEffect(isCorrect[1], rightEffectPosition);
+        ShowEffect(isCorrect[1], EffectPosition);
 
         if (isCorrect[0] && isCorrect[1] && correctSound != null)
         {

@@ -811,8 +811,7 @@ MonoBehaviour:
   punchEffectController: {fileID: 260749467}
   incorrectEffectController: {fileID: 260749467}
   correctSound: {fileID: 8300000, guid: ca913235be03e4ed3a4d895a38fd58a3, type: 3}
-  leftEffectPosition: {x: -5, y: 0, z: 0}
-  rightEffectPosition: {x: 5, y: 0, z: 0}
+  EffectPosition: {x: 5, y: 0, z: 0}
   effectDelay: 0.5
 --- !u!4 &260749466
 Transform:
