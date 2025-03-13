@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc6a94c7def1144538b29f57ee9a4e68, type: 3}
-  m_Name: PlayerWordData
+  m_Name: SeiASPlayerWordData
   m_EditorClassIdentifier: 
   playerWordPairs:
   - displayWord: "\u3044\u304B\u3060"

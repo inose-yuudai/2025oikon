@@ -11,65 +11,54 @@ public class RhymeButtonManager : MonoBehaviour
     /// <summary>
     /// 敵の単語に基づいてボタンをセットアップ
     /// </summary>
-public void SetupButtonsForTurn(string[] enemyWords)
-{
-    // スペースキーが押されている場合は、全てのボタンにspecialワードをセットする
-    if (ShouldCallSpecialWords())
+    ///
+     public void SetPlayerWordsData(PlayerWordData newPlayerWordsData)
     {
-        // specialWordPairsが空でないかチェック
-        if (playerWordData.specialWordPairs.Length == 0)
+        if (newPlayerWordsData == null)
         {
-            Debug.LogWarning("SpecialWordPairsが存在しません");
+            Debug.LogWarning("無効な PlayerWordsData が指定されました");
             return;
         }
-        
+        playerWordData = newPlayerWordsData;
+    }
+    public void SetupButtonsForTurn(string[] enemyWords)
+    {
+
+        if (playerWordData.playerWordPairs.Length < 4 || rhymeButtons.Length < 4)
+        {
+            Debug.LogWarning("十分なデータがありません");
+            return;
+        }
+
+        // スペシャルワードリスト（条件を満たしている場合、無条件で1件取得）
+        var specialWords = GetSpecialWords(enemyWords);
+
+        // スペシャルワードが取得された場合は、正解単語は1件、それ以外の場合は2件取得する
+        int correctWordCount = specialWords.Length > 0 ? 1 : 2;
+
+        // 韻が合う単語リスト
+        var correctWords = playerWordData.playerWordPairs
+            .Where(pair => enemyWords.Any(enemy => rhymeChecker.IsRhyme(enemy, pair.internalWord, 3)))
+            .OrderBy(_ => Random.value)
+            .Take(correctWordCount)
+            .ToArray();
+
+        // 韻が合わない単語リスト
+        var wrongWords = playerWordData.playerWordPairs
+            .Where(pair => !enemyWords.Any(enemy => rhymeChecker.IsRhyme(enemy, pair.internalWord, 3)))
+            .OrderBy(_ => Random.value)
+            .Take(2)
+            .ToArray();
+
+        // 正解・スペシャル・不正解を混ぜてランダム配置
+        var allWords = specialWords.Concat(correctWords).Concat(wrongWords).OrderBy(_ => Random.value).ToArray();
+
+        // ボタンにセット
         for (int i = 0; i < rhymeButtons.Length; i++)
         {
-            // ランダムに選択（被り可）
-            var randomIndex = Random.Range(0, playerWordData.specialWordPairs.Length);
-            var specialWord = playerWordData.specialWordPairs[randomIndex];
-            rhymeButtons[i].SetWord(specialWord);
+            rhymeButtons[i].SetWord(allWords[i]);
         }
-        return;
     }
-
-    // スペースキーが押されていない場合は、従来通りの処理
-    if (playerWordData.playerWordPairs.Length < 4 || rhymeButtons.Length < 4)
-    {
-        Debug.LogWarning("十分なデータがありません");
-        return;
-    }
-
-    // 通常は、specialWordが取得された場合は1件、そうでなければ2件正解単語を選ぶ
-    var specialWords = GetSpecialWords(enemyWords);
-    int correctWordCount = specialWords.Length > 0 ? 1 : 2;
-
-    // 韻が合う単語リスト
-    var correctWords = playerWordData.playerWordPairs
-        .Where(pair => enemyWords.Any(enemy => rhymeChecker.IsRhyme(enemy, pair.internalWord, 3)))
-        .OrderBy(_ => Random.value)
-        .Take(correctWordCount)
-        .ToArray();
-
-    // 韻が合わない単語リスト
-    var wrongWords = playerWordData.playerWordPairs
-        .Where(pair => !enemyWords.Any(enemy => rhymeChecker.IsRhyme(enemy, pair.internalWord, 3)))
-        .OrderBy(_ => Random.value)
-        .Take(2)
-        .ToArray();
-
-    // 正解・スペシャル・不正解を混ぜてランダム配置
-    var allWords = specialWords.Concat(correctWords).Concat(wrongWords)
-        .OrderBy(_ => Random.value)
-        .ToArray();
-
-    // ボタンにセット
-    for (int i = 0; i < rhymeButtons.Length; i++)
-    {
-        rhymeButtons[i].SetWord(allWords[i]);
-    }
-}
-
 
     /// <summary>
     /// スペシャルワードを取得する

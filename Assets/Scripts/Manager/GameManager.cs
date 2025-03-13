@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     [Header("EnemyWordsData の管理")]
     [SerializeField] private EnemyWordsData[] enemyWordsDataList; // 複数の EnemyWordsData
+    [SerializeField] private PlayerWordData[] PlayerWordsDataList; // 複数の PlayerWordsData
 
     // エフェクト関連
     [SerializeField] private RapidPunchEffect punchEffectController;       // 正解エフェクト
@@ -42,6 +43,16 @@ public class GameManager : MonoBehaviour
         enemyWordPresenter.SetEnemyWordsData(newData);
         Debug.Log($"EnemyWordsData を {newData.name} にセットしました");
     }
+      public void SetPlayerWordsData(PlayerWordData newData)
+    {
+        if (newData == null)
+        {
+            Debug.LogWarning("無効な PlayerWordsData が指定されました");
+            return;
+        }
+        rhymeButtonManager.SetPlayerWordsData(newData);
+        Debug.Log($"PlayerWordsData を {newData.name} にセットしました");
+    }
 
     /// <summary>
     /// 任意のタイミングで呼び出される新しいターンの開始
@@ -58,7 +69,7 @@ public class GameManager : MonoBehaviour
 
         // 敵の単語を2つ選んで表示
         enemyWordPresenter.ShowRandomEnemyWords();
-            Debug.Log("ゲームを開始します");
+        Debug.Log("ゲームを開始します");
         currentEnemyWords = enemyWordPresenter.CurrentEnemyWords;
 
         Debug.Log($"敵の単語: {currentEnemyWords[0]}, {currentEnemyWords[1]}");
