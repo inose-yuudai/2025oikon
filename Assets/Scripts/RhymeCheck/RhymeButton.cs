@@ -48,12 +48,6 @@ public class RhymeButton : MonoBehaviour
             Debug.LogError("RhymeButton: Button コンポーネントがアタッチされていません");
         }
     }
-
-    void Update()
-    {
-        Debug.Log(currentBubbles.Count);
-    }
-
     public bool interactable
     {
         get => (buttonComponent != null) && buttonComponent.interactable;
