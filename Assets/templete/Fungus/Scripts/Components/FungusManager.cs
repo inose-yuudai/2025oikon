@@ -23,27 +23,34 @@ namespace Fungus
         static bool applicationIsQuitting = false;
         readonly static object _lock = new object();  // The keyword "readonly" is friendly to the multi-thread.
 
-        void Awake()
-        {
-            CameraManager = GetComponent<CameraManager>();
-            MusicManager = GetComponent<MusicManager>();
-            EventDispatcher = GetComponent<EventDispatcher>();
-            GlobalVariables = GetComponent<GlobalVariables>();
+ void Awake()
+{
+    CameraManager = GetComponent<CameraManager>();
+    MusicManager = GetComponent<MusicManager>();
+    EventDispatcher = GetComponent<EventDispatcher>();
+    GlobalVariables = GetComponent<GlobalVariables>();
 #if UNITY_5_3_OR_NEWER
-            SaveManager = GetComponent<SaveManager>();
-            NarrativeLog = GetComponent<NarrativeLog>();
-            #endif
-        }
+    SaveManager = GetComponent<SaveManager>();
+    NarrativeLog = GetComponent<NarrativeLog>();
+#endif
+
+    // ▼ 他のコードに影響を与えないように音楽のボリュームを0.5に設定
+    if (MusicManager != null)
+    {
+        MusicManager.SetAudioVolume(0.2f, 0f, null);
+    }
+}
+
 
         /// <summary>
         /// When Unity quits, it destroys objects in a random order.
         /// In principle, a Singleton is only destroyed when application quits.
-        /// If any script calls Instance after it have been destroyed, 
+        /// If any script calls Instance after it have been destroyed,
         ///   it will create a buggy ghost object that will stay on the Editor scene
         ///   even after stopping playing the Application. Really bad!
         /// So, this was made to be sure we're not creating that buggy ghost object.
         /// </summary>
-        void OnDestroy () 
+        void OnDestroy ()
         {
             applicationIsQuitting = true;
         }
@@ -75,12 +82,12 @@ namespace Fungus
         /// Gets the save manager singleton instance.
         /// </summary>
         public SaveManager SaveManager { get; private set; }
-        
+
         /// <summary>
         /// Gets the history manager singleton instance.
         /// </summary>
         public NarrativeLog NarrativeLog { get; private set; }
-        
+
         #endif
 
         /// <summary>
@@ -90,7 +97,7 @@ namespace Fungus
         {
             get
             {
-                if (applicationIsQuitting) 
+                if (applicationIsQuitting)
                 {
                     Debug.LogWarning("FungusManager.Instance() was called while application is quitting. Returning null instead.");
                     return null;
@@ -111,7 +118,7 @@ namespace Fungus
 
                     }
                 }
-                
+
                 return instance;
             }
         }

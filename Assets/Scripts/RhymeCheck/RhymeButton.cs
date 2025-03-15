@@ -15,7 +15,7 @@ public class RhymeButton : MonoBehaviour
     // 吹き出し生成時の基準となる位置（ワールド座標で指定）
     [SerializeField] private Transform speechBubbleFirstPosition;
     [SerializeField] private Transform speechBubbleSecondPosition;
-    
+
     // アニメーションでの拡大倍率（1ならPrefabのサイズそのまま、1より大きいと拡大表示）
     [SerializeField] private float animationScaleMultiplier = 1f;
 
@@ -48,12 +48,6 @@ public class RhymeButton : MonoBehaviour
             Debug.LogError("RhymeButton: Button コンポーネントがアタッチされていません");
         }
     }
-
-    void Update()
-    {
-        Debug.Log(currentBubbles.Count);
-    }
-
     public bool interactable
     {
         get => (buttonComponent != null) && buttonComponent.interactable;
@@ -250,7 +244,7 @@ public class RhymeButton : MonoBehaviour
                 child.gameObject.SetActive(false);
             }
         }
-    
+
     }
 
     /// <summary>

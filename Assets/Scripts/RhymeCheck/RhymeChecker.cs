@@ -5,7 +5,7 @@ using System.Linq;
 public class RhymeChecker : MonoBehaviour
 {
     // ScriptableObject をインスペクターからアサインする
-    
+
     [SerializeField] private RhymeData rhymeData;
 
     // kana -> vowel の辞書（高速検索向け）
@@ -61,7 +61,7 @@ public class RhymeChecker : MonoBehaviour
     /// <summary>
     /// 簡易韻判定: 最後の n 母音が一致していれば "韻を踏んでいる" とみなす
     /// </summary>
-    public bool IsRhyme(string enemyWord, string playerWord, int compareLength = 2)
+    public bool IsRhyme(string enemyWord, string playerWord, int compareLength = 5)
     {
         string enemyVowels = ConvertToVowelString(enemyWord);
         string playerVowels = ConvertToVowelString(playerWord);

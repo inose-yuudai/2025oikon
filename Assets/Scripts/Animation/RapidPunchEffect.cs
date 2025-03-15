@@ -64,7 +64,7 @@ public class RapidPunchEffect : MonoBehaviour
             {
                 Vector3 spawnPos = transform.position + transform.forward * effectOffset.z
                                                       + transform.up * effectOffset.y
-                                                      + transform.right * effectOffset.x;
+                                                      + transform.right * effectOffset.x*2;
                 Instantiate(effectPrefab, spawnPos, Quaternion.identity);
             }
 

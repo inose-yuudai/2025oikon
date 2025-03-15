@@ -1,0 +1,948 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6748337726597160871
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588b3cca60f217d438ef96013ebfdb06, type: 3}
+  m_Name: uence Trackmage Sequence Track
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Version: 1
+    m_Start: 0
+    m_ClipIn: 0
+    m_Asset: {fileID: 7001632303015386290}
+    m_Duration: 1.4833333333333334
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: -6748337726597160871}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: -2229559190519561219}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 0
+    m_DisplayName: AE
+  m_Markers:
+    m_Objects: []
+  m_obsoleteClipDataCollection:
+    m_keys: []
+    m_values: []
+  m_obsoleteHashClipDataCollection:
+    m_keys: 
+    m_values: []
+  m_serializedDataCollection:
+  - m_baseClipDataVersion: 1
+    m_playableFrames:
+    - m_serializedBoolProperties: []
+      m_localTime: 0
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.016666666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.03333333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.05
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.06666666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.08333333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.1
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.11666666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.13333333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.15
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.16666666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.18333333333333332
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.2
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.21666666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.23333333333333334
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.25
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.26666666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.2833333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.3
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.31666666666666665
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.3333333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.35
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.36666666666666664
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.3833333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.4
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.4166666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.43333333333333335
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.45
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.4666666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.48333333333333334
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.5
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.5166666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.5333333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.55
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.5666666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.5833333333333334
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.6
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.6166666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.6333333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.65
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.6666666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.6833333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.7
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.7166666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.7333333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.75
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.7666666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.7833333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.8
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.8166666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.8333333333333334
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.85
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.8666666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.8833333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.9
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.9166666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.9333333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.95
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.9666666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 0.9833333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.0166666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.0333333333333332
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.05
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.0666666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.0833333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.1
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.1166666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.1333333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.15
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.1666666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.1833333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.2
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.2166666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.2333333333333334
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.25
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.2666666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.2833333333333332
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.3
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.3166666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.3333333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.35
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.3666666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.3833333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.4
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.4166666666666667
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.4333333333333333
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.45
+      m_marker: {fileID: 0}
+      m_userNote: 
+    - m_serializedBoolProperties: []
+      m_localTime: 1.4666666666666666
+      m_marker: {fileID: 0}
+      m_userNote: 
+    m_frameMarkersRequested: 0
+    m_playableFrameClipDataVersion: 1
+    m_sisClipDataVersion: 1
+    m_animationCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0.6741573
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.4833333
+        value: 1
+        inSlope: 0.6741573
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+  m_baseExtendedClipTrackVersion: 2
+--- !u!74 &-2229559190519561219
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 'Curves: AE'
+  serializedVersion: 7
+  m_Legacy: 1
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves:
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0.6741573
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.4833333
+        value: 1
+        inSlope: 0.6741573
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_time
+    path: 
+    classID: 114
+    script: {fileID: 11500000, guid: 07c579aa4480ce64daff0ad6a9312d97, type: 3}
+    flags: 0
+  m_PPtrCurves: []
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings: []
+    pptrCurveMapping: []
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 1.4833333
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 0
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - serializedVersion: 2
+    curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0.6741573
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1.4833333
+        value: 1
+        inSlope: 0.6741573
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_time
+    path: 
+    classID: 114
+    script: {fileID: 11500000, guid: 07c579aa4480ce64daff0ad6a9312d97, type: 3}
+    flags: 0
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events: []
+--- !u!114 &-854612439967054000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d21dcc2386d650c4597f3633c75a1f98, type: 3}
+  m_Name: Animation Track
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_AnimClip: {fileID: 0}
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_Curves: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_Markers:
+    m_Objects: []
+  m_InfiniteClipPreExtrapolation: 0
+  m_InfiniteClipPostExtrapolation: 0
+  m_InfiniteClipOffsetPosition: {x: 0, y: 0, z: 0}
+  m_InfiniteClipOffsetEulerAngles: {x: 0, y: 0, z: 0}
+  m_InfiniteClipTimeOffset: 0
+  m_InfiniteClipRemoveOffset: 0
+  m_InfiniteClipApplyFootIK: 1
+  mInfiniteClipLoop: 0
+  m_MatchTargetFields: 63
+  m_Position: {x: 0, y: 0, z: 0}
+  m_EulerAngles: {x: 0, y: 0, z: 0}
+  m_AvatarMask: {fileID: 0}
+  m_ApplyAvatarMask: 1
+  m_TrackOffset: 0
+  m_InfiniteClip: {fileID: 0}
+  m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ApplyOffsets: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
+  m_Name: op
+  m_EditorClassIdentifier: 
+  m_Version: 0
+  m_Tracks:
+  - {fileID: -854612439967054000}
+  - {fileID: -6748337726597160871}
+  m_FixedDuration: 0
+  m_EditorSettings:
+    m_Framerate: 60
+    m_ScenePreview: 1
+  m_DurationMode: 0
+  m_MarkerTrack: {fileID: 0}
+--- !u!114 &7001632303015386290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07c579aa4480ce64daff0ad6a9312d97, type: 3}
+  m_Name: StreamingImageSequencePlayableAsset
+  m_EditorClassIdentifier: 
+  m_folder: Assets/cutin/AE
+  m_imageFiles:
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00000.png"
+    m_size: 2271226
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00001.png"
+    m_size: 2218235
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00002.png"
+    m_size: 2292300
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00003.png"
+    m_size: 2305880
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00004.png"
+    m_size: 2291275
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00005.png"
+    m_size: 2294684
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00006.png"
+    m_size: 2285108
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00007.png"
+    m_size: 2257108
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00008.png"
+    m_size: 2241777
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00009.png"
+    m_size: 2186986
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00010.png"
+    m_size: 2128643
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00011.png"
+    m_size: 2077643
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00012.png"
+    m_size: 2044345
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00013.png"
+    m_size: 2028180
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00014.png"
+    m_size: 2014293
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00015.png"
+    m_size: 1996145
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00016.png"
+    m_size: 1965108
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00017.png"
+    m_size: 1934000
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00018.png"
+    m_size: 1915997
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00019.png"
+    m_size: 1921120
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00020.png"
+    m_size: 1913819
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00021.png"
+    m_size: 1908475
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00022.png"
+    m_size: 1905999
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00023.png"
+    m_size: 1891909
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00024.png"
+    m_size: 1884928
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00025.png"
+    m_size: 1894803
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00026.png"
+    m_size: 1881593
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00027.png"
+    m_size: 1864584
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00028.png"
+    m_size: 1857557
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00029.png"
+    m_size: 1859878
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00030.png"
+    m_size: 1858790
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00031.png"
+    m_size: 1863347
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00032.png"
+    m_size: 1861080
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00033.png"
+    m_size: 1852334
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00034.png"
+    m_size: 1854358
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00035.png"
+    m_size: 1845655
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00036.png"
+    m_size: 1859871
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00037.png"
+    m_size: 1862486
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00038.png"
+    m_size: 1854231
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00039.png"
+    m_size: 1853823
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00040.png"
+    m_size: 1868528
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00041.png"
+    m_size: 1876279
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00042.png"
+    m_size: 1858662
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00043.png"
+    m_size: 1847930
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00044.png"
+    m_size: 1847937
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00045.png"
+    m_size: 1836739
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00046.png"
+    m_size: 1817150
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00047.png"
+    m_size: 1830625
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00048.png"
+    m_size: 1836001
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00049.png"
+    m_size: 1840525
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00050.png"
+    m_size: 1844859
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00051.png"
+    m_size: 1835454
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00052.png"
+    m_size: 1808329
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00053.png"
+    m_size: 1777286
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00054.png"
+    m_size: 1788174
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00055.png"
+    m_size: 1805146
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00056.png"
+    m_size: 1794157
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00057.png"
+    m_size: 1767509
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00058.png"
+    m_size: 1755126
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00059.png"
+    m_size: 1757284
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00060.png"
+    m_size: 1763320
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00061.png"
+    m_size: 1747640
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00062.png"
+    m_size: 1748765
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00063.png"
+    m_size: 1746603
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00064.png"
+    m_size: 1743306
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00065.png"
+    m_size: 1738212
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00066.png"
+    m_size: 1732183
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00067.png"
+    m_size: 1737401
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00068.png"
+    m_size: 1743678
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00069.png"
+    m_size: 1742199
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00070.png"
+    m_size: 1739044
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00071.png"
+    m_size: 1738341
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00072.png"
+    m_size: 1739851
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00073.png"
+    m_size: 1741925
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00074.png"
+    m_size: 1741805
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00075.png"
+    m_size: 1739656
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00076.png"
+    m_size: 1736862
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00077.png"
+    m_size: 1735265
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00078.png"
+    m_size: 1735928
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00079.png"
+    m_size: 1735278
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00080.png"
+    m_size: 1735009
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00081.png"
+    m_size: 1735009
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00082.png"
+    m_size: 1735009
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00083.png"
+    m_size: 1735009
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00084.png"
+    m_size: 1735009
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00085.png"
+    m_size: 1735009
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00086.png"
+    m_size: 1735009
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00087.png"
+    m_size: 1735009
+  - m_name: "\u30B3\u30F3\u30DD 1_H.264 - \u30EC\u30F3\u30C0\u30EA\u30F3\u30B0\u8A2D\u5B9A\u3092\u4E00\u81F4
+      - 15 Mbps_00088.png"
+    m_size: 1450477
+  m_timelineBGColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_version: 3
+  m_time: 0
+  m_textureFilterMode: 1
+  Folder: 
+  m_timelineDefaultAsset: {fileID: 102900000, guid: 9d02dfa6b842f0e42b7d4a597f86fc72, type: 3}

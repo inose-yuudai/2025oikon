@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
 
     [Header("EnemyWordsData の管理")]
     [SerializeField] private EnemyWordsData[] enemyWordsDataList; // 複数の EnemyWordsData
+    [SerializeField] private PlayerWordData[] PlayerWordsDataList; // 複数の PlayerWordsData
 
     // エフェクト関連
     [SerializeField] private RapidPunchEffect punchEffectController;       // 正解エフェクト
@@ -18,8 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private AudioClip correctSound;                       // 正解音
 
     [Header("エフェクト表示位置")]
-    [SerializeField] private Vector3 leftEffectPosition = new Vector3(-5, 0, 0);
-    [SerializeField] private Vector3 rightEffectPosition = new Vector3(5, 0, 0);
+    [SerializeField] private Vector3 EffectPosition = new Vector3(5, 0, 0);
 
     [Header("エフェクト間隔(秒)")]
     [SerializeField] private float effectDelay = 0.5f;
@@ -43,6 +43,16 @@ public class GameManager : MonoBehaviour
         enemyWordPresenter.SetEnemyWordsData(newData);
         Debug.Log($"EnemyWordsData を {newData.name} にセットしました");
     }
+      public void SetPlayerWordsData(PlayerWordData newData)
+    {
+        if (newData == null)
+        {
+            Debug.LogWarning("無効な PlayerWordsData が指定されました");
+            return;
+        }
+        rhymeButtonManager.SetPlayerWordsData(newData);
+        Debug.Log($"PlayerWordsData を {newData.name} にセットしました");
+    }
 
     /// <summary>
     /// 任意のタイミングで呼び出される新しいターンの開始
@@ -59,7 +69,7 @@ public class GameManager : MonoBehaviour
 
         // 敵の単語を2つ選んで表示
         enemyWordPresenter.ShowRandomEnemyWords();
-            Debug.Log("ゲームを開始します");
+        Debug.Log("ゲームを開始します");
         currentEnemyWords = enemyWordPresenter.CurrentEnemyWords;
 
         Debug.Log($"敵の単語: {currentEnemyWords[0]}, {currentEnemyWords[1]}");
@@ -144,10 +154,10 @@ public class GameManager : MonoBehaviour
             );
         }
 
-        ShowEffect(isCorrect[0], leftEffectPosition);
+        ShowEffect(isCorrect[0], EffectPosition);
         yield return new WaitForSeconds(effectDelay);
 
-        ShowEffect(isCorrect[1], rightEffectPosition);
+        ShowEffect(isCorrect[1], EffectPosition);
 
         if (isCorrect[0] && isCorrect[1] && correctSound != null)
         {
