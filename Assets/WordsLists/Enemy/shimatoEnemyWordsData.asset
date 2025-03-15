@@ -49,3 +49,17 @@ MonoBehaviour:
   - displayWord: "\u71B1\u72C2"
     internalWord: "\u306D\u3063\u304D\u3087\u3046"
     voiceClip: {fileID: 8300000, guid: 4b57a24c903fe418ab36b75c82a26a47, type: 3}
+  specialEnemyWordPairs:
+  - displayWord: "\u6CE5\u9154"
+    internalWord: "\u3067\u3044\u3059\u3044"
+    voiceClip: {fileID: 8300000, guid: b3e28be85d46c4cbab6d3c6e6a81fe23, type: 3}
+  - displayWord: "\u6CE5\u9154"
+    internalWord: "\u3067\u3044\u3059\u3044"
+    voiceClip: {fileID: 8300000, guid: b3e28be85d46c4cbab6d3c6e6a81fe23, type: 3}
+  criticalEnemyWordPairs:
+  - displayWord: "\u7261\u8823"
+    internalWord: "\u304B\u304D"
+    voiceClip: {fileID: 8300000, guid: a5c9d59810ee34f479baaa5d7baff35b, type: 3}
+  - displayWord: "\u7261\u8823"
+    internalWord: "\u304B\u304D"
+    voiceClip: {fileID: 8300000, guid: a5c9d59810ee34f479baaa5d7baff35b, type: 3}

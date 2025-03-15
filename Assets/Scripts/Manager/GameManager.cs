@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private RhymeChecker rhymeChecker;
     [SerializeField] private ScoreManager scoreManager;
     [SerializeField] private TimeManager timeManager;
+
+    public int timing = 0;
 
     [Header("EnemyWordsData の管理")]
     [SerializeField] private EnemyWordsData[] enemyWordsDataList; // 複数の EnemyWordsData
@@ -23,6 +26,21 @@ public class GameManager : MonoBehaviour
 
     [Header("エフェクト間隔(秒)")]
     [SerializeField] private float effectDelay = 0.5f;
+
+     [Header("Lastエフェクト設定")]
+    [SerializeField] private GameObject effectPrefab;  // 通常のエフェクト
+    [SerializeField] private GameObject explosionEffectPrefab; // 最後の大爆発
+    [SerializeField] private int effectCount = 150;    // 生成するエフェクトの数
+    [SerializeField] private float effectDuration = 0.7f; // エフェクトが消えるまでの時間
+    [SerializeField] private float effectRadius = 5f; // 画面中央からのばらつき範囲
+    [SerializeField] private float spawnInterval = 0.02f; // 連撃エフェクトの発生間隔
+
+     [Header("SE設定")]
+    [SerializeField] private AudioClip[] seClips;      // 連撃用SEリスト
+    [SerializeField] private AudioClip finalExplosionSE; // 最後の爆発音
+    [SerializeField] private AudioSource audioSource; // SEを鳴らすAudioSource
+    [SerializeField] private int maxSimultaneousSE = 8; // 同時に鳴らせるSEの最大数
+    [SerializeField] private float seInterval = 0.05f; // SEの発生間隔
 
     private string[] currentEnemyWords = new string[2]; // 敵が出す2つの単語
     private string[] playerSelections = new string[2];  // プレイヤーが選んだ2つの単語
@@ -43,7 +61,7 @@ public class GameManager : MonoBehaviour
         enemyWordPresenter.SetEnemyWordsData(newData);
         Debug.Log($"EnemyWordsData を {newData.name} にセットしました");
     }
-      public void SetPlayerWordsData(PlayerWordData newData)
+    public void SetPlayerWordsData(PlayerWordData newData)
     {
         if (newData == null)
         {
@@ -152,6 +170,12 @@ public class GameManager : MonoBehaviour
                     ? $"選択 {i + 1}: 正解！ (Enemy: {currentEnemyWords[i]}, Player: {playerSelections[i]})"
                     : $"選択 {i + 1}: 不正解 (Enemy: {currentEnemyWords[i]}, Player: {playerSelections[i]})"
             );
+
+            // ★正解の場合はスコア加算（ここに追加）
+            if (isCorrect[i])
+            {
+                scoreManager.AddScore(1 + timing);
+            }
         }
 
         ShowEffect(isCorrect[0], EffectPosition);
@@ -174,6 +198,7 @@ public class GameManager : MonoBehaviour
         StartNewTurn();
     }
 
+
     /// <summary>
     /// 正解/不正解に応じたエフェクトを表示
     /// </summary>
@@ -187,11 +212,69 @@ public class GameManager : MonoBehaviour
             if (isCorrect)
             {
                 effectController.PlayCorrectEffect();
+
             }
             else
             {
                 effectController.PlayIncorrectEffect();
             }
+        }
+    }
+public void ShowLastEffect()
+    {
+        StartCoroutine(SpawnRapidEffects());
+    }
+
+    private IEnumerator SpawnRapidEffects()
+    {
+        Vector3 centerPosition = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+        Vector3 worldCenter = Camera.main.ScreenToWorldPoint(new Vector3(centerPosition.x, centerPosition.y, 10));
+
+        for (int i = 0; i < effectCount; i++)
+        {
+            Vector3 randomOffset = new Vector3(
+                Random.Range(-effectRadius, effectRadius),
+                Random.Range(-effectRadius, effectRadius),
+                0
+            );
+
+            GameObject effect = Instantiate(effectPrefab, worldCenter + randomOffset, Quaternion.identity);
+            effect.transform.localScale = Vector3.zero;
+            effect.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);
+            Destroy(effect, effectDuration);
+
+            if (i % 10 == 0) // 10回に1回SEを鳴らす
+            {
+                PlayRandomSE();
+            }
+
+            yield return new WaitForSeconds(spawnInterval); // 連撃感を出す
+        }
+
+        yield return new WaitForSeconds(0.5f); // 連撃エフェクトの余韻
+
+        SpawnFinalExplosion(worldCenter);
+    }
+
+    private void PlayRandomSE()
+    {
+        if (seClips.Length > 0 && audioSource != null)
+        {
+            AudioClip clip = seClips[Random.Range(0, seClips.Length)];
+            audioSource.PlayOneShot(clip);
+        }
+    }
+
+    private void SpawnFinalExplosion(Vector3 position)
+    {
+        GameObject explosion = Instantiate(explosionEffectPrefab, position, Quaternion.identity);
+        explosion.transform.localScale = Vector3.zero;
+        explosion.transform.DOScale(Vector3.one * 3f, 0.5f).SetEase(Ease.OutBack);
+        Destroy(explosion, 1.5f);
+
+        if (finalExplosionSE != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(finalExplosionSE);
         }
     }
 }

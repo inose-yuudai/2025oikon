@@ -14,10 +14,12 @@ public class RhythmGameManager : MonoBehaviour
     [SerializeField] private float goodThreshold = 0.3f;
 
     [Header("スライダーUI")]
-    [SerializeField] private Slider rhythmSlider; 
+    [SerializeField] private Slider rhythmSlider;
 
     [Header("スコア管理")]
-    [SerializeField] private ScoreManager scoreManager; 
+    [SerializeField] private ScoreManager scoreManager;
+
+     public GameManager gameManager;
 
     private float musicStartTime; // 音楽再生開始時刻
 
@@ -84,16 +86,17 @@ public class RhythmGameManager : MonoBehaviour
         if (minDistance <= greatThreshold)
         {
             Debug.Log("Great! (0付近 or 最大値付近)");
-            scoreManager.AddScore(2); // Great
+            gameManager.timing = 2;
         }
         else if (minDistance <= goodThreshold)
         {
             Debug.Log("Good! (0付近 or 最大値付近)");
-            scoreManager.AddScore(1); // Good
+            gameManager.timing = 1;
         }
         else
         {
             Debug.Log("Miss!");
+            gameManager.timing = 0;
             // Missは加算なし
         }
     }

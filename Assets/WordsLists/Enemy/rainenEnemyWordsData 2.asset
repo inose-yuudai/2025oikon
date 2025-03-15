@@ -76,3 +76,17 @@ MonoBehaviour:
   - displayWord: "\u5230\u9054"
     internalWord: "\u3068\u3046\u305F\u3064"
     voiceClip: {fileID: 8300000, guid: cfe5c8d7013d242f5af15f566d3a4a6c, type: 3}
+  specialEnemyWordPairs:
+  - displayWord: "\u66B4\u8D70"
+    internalWord: "\u307C\u3046\u305D\u3046"
+    voiceClip: {fileID: 8300000, guid: c6da6977f88f8480a9b3f6b06e02f1a7, type: 3}
+  - displayWord: "\u66B4\u8D70"
+    internalWord: "\u307C\u3046\u305D\u3046"
+    voiceClip: {fileID: 8300000, guid: c6da6977f88f8480a9b3f6b06e02f1a7, type: 3}
+  criticalEnemyWordPairs:
+  - displayWord: "\u30C7\u30B8\u30CF\u30EA"
+    internalWord: "\u30C7\u30B8\u30CF\u30EA"
+    voiceClip: {fileID: 0}
+  - displayWord: "\u30C7\u30B8\u30CF\u30EA"
+    internalWord: "\u30C7\u30B8\u30CF\u30EA"
+    voiceClip: {fileID: 0}

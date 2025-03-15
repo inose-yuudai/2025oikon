@@ -4,14 +4,16 @@ using UnityEngine;
 public class EnemyWordsData : ScriptableObject
 {
     public EnemyWordPair[] enemyWordPairs;
+
+    // ▼ 追加: Special・Critical用の単語（各1セットのみでシンプル化）
+    public EnemyWordPair[] specialEnemyWordPairs;
+    public EnemyWordPair[] criticalEnemyWordPairs;
 }
 
 [System.Serializable]
 public struct EnemyWordPair
 {
-    public string displayWord;   // 画面に表示する文字 (例: "秋葉")
-    public string internalWord;  // 判定用の文字    (例: "あきば")
-    
-    // ▼ 新規追加: 音声データ
-    public AudioClip voiceClip;  // このセリフ(秋葉)に対応したボイス音源
+    public string displayWord;
+    public string internalWord;
+    public AudioClip voiceClip;
 }

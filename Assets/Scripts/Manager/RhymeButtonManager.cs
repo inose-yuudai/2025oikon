@@ -7,12 +7,10 @@ public class RhymeButtonManager : MonoBehaviour
     [SerializeField] private RhymeChecker rhymeChecker;
     [SerializeField] private PlayerWordData playerWordData;
     [SerializeField] private RhymeButton[] rhymeButtons;
+    private bool forceCallSpecialWords = false;
+    private bool forceCallCriticalWords = false; // 追加: CriticalWord用フラグ
 
-    /// <summary>
-    /// 敵の単語に基づいてボタンをセットアップ
-    /// </summary>
-    ///
-     public void SetPlayerWordsData(PlayerWordData newPlayerWordsData)
+    public void SetPlayerWordsData(PlayerWordData newPlayerWordsData)
     {
         if (newPlayerWordsData == null)
         {
@@ -21,94 +19,120 @@ public class RhymeButtonManager : MonoBehaviour
         }
         playerWordData = newPlayerWordsData;
     }
+
     public void SetupButtonsForTurn(string[] enemyWords)
     {
-        if (ShouldCallSpecialWords())
-    {
-        // specialWordPairsが空でないかチェック
-        if (playerWordData.specialWordPairs.Length == 0)
+        // CriticalWordsがアクティブなら最優先
+        if (ShouldCallCriticalWords())
         {
-            Debug.LogWarning("SpecialWordPairsが存在しません");
+            if (playerWordData.criticalWordPairs.Length == 0)
+            {
+                Debug.LogWarning("CriticalWordPairsが存在しません");
+                return;
+            }
+
+            for (int i = 0; i < rhymeButtons.Length; i++)
+            {
+                var randomIndex = Random.Range(0, playerWordData.criticalWordPairs.Length);
+                var criticalWord = playerWordData.criticalWordPairs[randomIndex];
+                rhymeButtons[i].SetWord(criticalWord);
+            }
+            return; // CriticalWordsを設定したらここで終了
+        }
+
+        // 次にSpecialWordsの処理（既存のロジック）
+        if (ShouldCallSpecialWords())
+        {
+            if (playerWordData.specialWordPairs.Length == 0)
+            {
+                Debug.LogWarning("SpecialWordPairsが存在しません");
+                return;
+            }
+
+            for (int i = 0; i < rhymeButtons.Length; i++)
+            {
+                var randomIndex = Random.Range(0, playerWordData.specialWordPairs.Length);
+                var specialWord = playerWordData.specialWordPairs[randomIndex];
+                rhymeButtons[i].SetWord(specialWord);
+            }
             return;
         }
-        for (int i = 0; i < rhymeButtons.Length; i++)
-        {
-            // ランダムに選択（被り可）
-            var randomIndex = Random.Range(0, playerWordData.specialWordPairs.Length);
-            var specialWord = playerWordData.specialWordPairs[randomIndex];
-            rhymeButtons[i].SetWord(specialWord);
-        }
-        return;
-    }
 
+        // 以下は通常処理（変更なし）
         if (playerWordData.playerWordPairs.Length < 4 || rhymeButtons.Length < 4)
         {
             Debug.LogWarning("十分なデータがありません");
             return;
         }
 
-        // スペシャルワードリスト（条件を満たしている場合、無条件で1件取得）
         var specialWords = GetSpecialWords(enemyWords);
-
-        // スペシャルワードが取得された場合は、正解単語は1件、それ以外の場合は2件取得する
         int correctWordCount = specialWords.Length > 0 ? 1 : 2;
 
-        // 韻が合う単語リスト
         var correctWords = playerWordData.playerWordPairs
             .Where(pair => enemyWords.Any(enemy => rhymeChecker.IsRhyme(enemy, pair.internalWord, 5)))
             .OrderBy(_ => Random.value)
             .Take(correctWordCount)
             .ToArray();
 
-        // 韻が合わない単語リスト
         var wrongWords = playerWordData.playerWordPairs
             .Where(pair => !enemyWords.Any(enemy => rhymeChecker.IsRhyme(enemy, pair.internalWord, 5)))
             .OrderBy(_ => Random.value)
             .Take(2)
             .ToArray();
 
-        // 正解・スペシャル・不正解を混ぜてランダム配置
         var allWords = specialWords.Concat(correctWords).Concat(wrongWords).OrderBy(_ => Random.value).ToArray();
 
-        // ボタンにセット
         for (int i = 0; i < rhymeButtons.Length; i++)
         {
             rhymeButtons[i].SetWord(allWords[i]);
         }
     }
 
-    /// <summary>
-    /// スペシャルワードを取得する
-    /// </summary>
     private PlayerWordPair[] GetSpecialWords(string[] enemyWords)
     {
         if (ShouldCallSpecialWords())
         {
-            // 条件を満たしている場合は、enemyWordsの韻チェックはせずに全specialWordPairsからランダムに1件取得
-            var specialWords = playerWordData.specialWordPairs
+            return playerWordData.specialWordPairs
                 .OrderBy(_ => Random.value)
                 .Take(1)
                 .ToArray();
-            return specialWords;
         }
 
         return new PlayerWordPair[0];
     }
 
-    /// <summary>
-    /// スペシャルワードを呼ぶべきかどうかを判定する
-    /// </summary>
-    private bool ShouldCallSpecialWords()
+    // --- CriticalWords 制御メソッド追加 ---
+    public void ActivateCriticalWords()
     {
-        // 例: スペースキーが押されていたら true を返す
-        var shouldCall = Input.GetKey(KeyCode.Space);
-
-        return shouldCall;
+        forceCallCriticalWords = true;
     }
 
-    /// <summary>
-    /// ボタンを表示/非表示にする(ゲームオブジェクトごと)
-    /// </summary>
+    public void DeactivateCriticalWords()
+    {
+        forceCallCriticalWords = false;
+    }
+
+    private bool ShouldCallCriticalWords()
+    {
+        return forceCallCriticalWords;
+    }
+
+    // --- SpecialWords 制御メソッド（既存）---
+    public void ActivateSpecialWords()
+    {
+        forceCallSpecialWords = true;
+    }
+
+    public void DeactivateSpecialWords()
+    {
+        forceCallSpecialWords = false;
+    }
+
+    private bool ShouldCallSpecialWords()
+    {
+        return forceCallSpecialWords;
+    }
+
     public void SetButtonsVisible(bool isVisible)
     {
         foreach (var button in rhymeButtons)
@@ -117,9 +141,6 @@ public class RhymeButtonManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// ボタンの状態リセット
-    /// </summary>
     public void ResetAllButtons()
     {
         foreach (var button in rhymeButtons)
@@ -128,15 +149,10 @@ public class RhymeButtonManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// ボタンの「押せる／押せない」を一括制御
-    /// （RhymeButton 内で interactable プロパティを用意している場合）
-    /// </summary>
     public void SetButtonsInteractable(bool canInteract)
     {
         foreach (var btn in rhymeButtons)
         {
-            // ★ ここでエラーになる場合は、 RhymeButton に public bool interactable { ... } が実装されているかを確認する
             btn.interactable = canInteract;
         }
     }

@@ -1,21 +1,24 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
-using DG.Tweening; // DOTween の名前空間
+using DG.Tweening;
 
 public class EnemyWordPresenter : MonoBehaviour
 {
-    [SerializeField] private EnemyWordsData[] enemyWordsDataList; // 複数の EnemyWordsData
+    [SerializeField] private EnemyWordsData[] enemyWordsDataList;
     [SerializeField] private Text enemyWordText1;
     [SerializeField] private Text enemyWordText2;
-    [SerializeField] private RectTransform speechBubble1; // 吹き出し用 Transform（Text の背後に配置）
+    [SerializeField] private RectTransform speechBubble1;
     [SerializeField] private RectTransform speechBubble2;
     [SerializeField] private AudioSource audioSource;
 
-    private EnemyWordsData currentEnemyWordsData; // 現在使用中の EnemyWordsData
+    public RhymeButton rhymeButton;
+
+    private EnemyWordsData currentEnemyWordsData;
     private EnemyWordPair[] currentEnemyWordPairs = new EnemyWordPair[2];
 
-    public RhymeButton rhymeButton; // ライムボタン
+    private bool forceCriticalWords = false;
+    private bool forceSpecialWords = false;
 
     public string[] CurrentEnemyWords => new string[]
     {
@@ -35,7 +38,7 @@ public class EnemyWordPresenter : MonoBehaviour
     {
         if (enemyWordsDataList.Length > 0)
         {
-            SetEnemyWordsData(enemyWordsDataList[0]); // 初期値
+            SetEnemyWordsData(enemyWordsDataList[0]);
         }
         else
         {
@@ -43,9 +46,6 @@ public class EnemyWordPresenter : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 使用する EnemyWordsData を設定
-    /// </summary>
     public void SetEnemyWordsData(EnemyWordsData newEnemyWordsData)
     {
         if (newEnemyWordsData == null)
@@ -56,28 +56,54 @@ public class EnemyWordPresenter : MonoBehaviour
         currentEnemyWordsData = newEnemyWordsData;
     }
 
-    /// <summary>
-    /// 敵の単語を2つランダムに選んで表示し、アニメーションで出現させる
-    /// </summary>
     public void ShowRandomEnemyWords()
     {
-        if (currentEnemyWordsData == null || currentEnemyWordsData.enemyWordPairs.Length < 2)
+        if (currentEnemyWordsData == null)
         {
-            Debug.LogWarning("EnemyWordsData に十分な単語がありません");
+            Debug.LogWarning("EnemyWordsDataが設定されていません");
             return;
         }
-        rhymeButton.HideCurrentBubble(); // 現在の吹き出しを非表示にする
 
-        // 単語をシャッフルして2つ選択
-        var shuffledPairs = currentEnemyWordsData.enemyWordPairs.OrderBy(x => Random.value).ToArray();
-        currentEnemyWordPairs[0] = shuffledPairs[0];
-        currentEnemyWordPairs[1] = shuffledPairs[1];
+        rhymeButton.HideCurrentBubble();
 
-        // 表示用テキストにセット
-        if (enemyWordText1 != null) enemyWordText1.text = currentEnemyWordPairs[0].displayWord;
-        if (enemyWordText2 != null) enemyWordText2.text = currentEnemyWordPairs[1].displayWord;
+        if (forceCriticalWords && currentEnemyWordsData.criticalEnemyWordPairs.Length >= 1)
+        {
+            SetFixedEnemyWords(currentEnemyWordsData.criticalEnemyWordPairs);
+        }
+        else if (forceSpecialWords && currentEnemyWordsData.specialEnemyWordPairs.Length >= 1)
+        {
+            SetFixedEnemyWords(currentEnemyWordsData.specialEnemyWordPairs);
+        }
+        else
+        {
+            if (currentEnemyWordsData.enemyWordPairs.Length < 2)
+            {
+                Debug.LogWarning("EnemyWordsData に十分な単語がありません");
+                return;
+            }
 
-        // 各オブジェクトの元のスケールを取得して目標値とする
+            var shuffledPairs = currentEnemyWordsData.enemyWordPairs.OrderBy(x => Random.value).ToArray();
+            currentEnemyWordPairs[0] = shuffledPairs[0];
+            currentEnemyWordPairs[1] = shuffledPairs[1];
+
+            enemyWordText1.text = currentEnemyWordPairs[0].displayWord;
+            enemyWordText2.text = currentEnemyWordPairs[1].displayWord;
+        }
+
+        AnimateEnemyWords();
+    }
+
+    private void SetFixedEnemyWords(EnemyWordPair[] fixedPairs)
+    {
+        currentEnemyWordPairs[0] = fixedPairs[0];
+        currentEnemyWordPairs[1] = fixedPairs[1];
+
+        enemyWordText1.text = currentEnemyWordPairs[0].displayWord;
+        enemyWordText2.text = currentEnemyWordPairs[1].displayWord;
+    }
+
+    private void AnimateEnemyWords()
+    {
         if (enemyWordText1 != null)
         {
             Vector3 originalScale = enemyWordText1.transform.localScale;
@@ -104,19 +130,35 @@ public class EnemyWordPresenter : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 敵のテキスト1の Transform を取得
-    /// </summary>
     public Transform GetEnemyWordText1Transform()
     {
         return enemyWordText1?.transform;
     }
 
-    /// <summary>
-    /// 敵のテキスト2の Transform を取得
-    /// </summary>
     public Transform GetEnemyWordText2Transform()
     {
         return enemyWordText2?.transform;
+    }
+
+    // --- クリティカルの有効化・無効化 ---
+    public void ActivateCriticalEnemyWords()
+    {
+        forceCriticalWords = true;
+    }
+
+    public void DeactivateCriticalEnemyWords()
+    {
+        forceCriticalWords = false;
+    }
+
+    // --- スペシャルの有効化・無効化 ---
+    public void ActivateSpecialEnemyWords()
+    {
+        forceSpecialWords = true;
+    }
+
+    public void DeactivateSpecialEnemyWords()
+    {
+        forceSpecialWords = false;
     }
 }
