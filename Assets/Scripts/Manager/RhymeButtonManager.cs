@@ -23,6 +23,23 @@ public class RhymeButtonManager : MonoBehaviour
     }
     public void SetupButtonsForTurn(string[] enemyWords)
     {
+        if (ShouldCallSpecialWords())
+    {
+        // specialWordPairsが空でないかチェック
+        if (playerWordData.specialWordPairs.Length == 0)
+        {
+            Debug.LogWarning("SpecialWordPairsが存在しません");
+            return;
+        }
+        for (int i = 0; i < rhymeButtons.Length; i++)
+        {
+            // ランダムに選択（被り可）
+            var randomIndex = Random.Range(0, playerWordData.specialWordPairs.Length);
+            var specialWord = playerWordData.specialWordPairs[randomIndex];
+            rhymeButtons[i].SetWord(specialWord);
+        }
+        return;
+    }
 
         if (playerWordData.playerWordPairs.Length < 4 || rhymeButtons.Length < 4)
         {
@@ -38,14 +55,14 @@ public class RhymeButtonManager : MonoBehaviour
 
         // 韻が合う単語リスト
         var correctWords = playerWordData.playerWordPairs
-            .Where(pair => enemyWords.Any(enemy => rhymeChecker.IsRhyme(enemy, pair.internalWord, 3)))
+            .Where(pair => enemyWords.Any(enemy => rhymeChecker.IsRhyme(enemy, pair.internalWord, 5)))
             .OrderBy(_ => Random.value)
             .Take(correctWordCount)
             .ToArray();
 
         // 韻が合わない単語リスト
         var wrongWords = playerWordData.playerWordPairs
-            .Where(pair => !enemyWords.Any(enemy => rhymeChecker.IsRhyme(enemy, pair.internalWord, 3)))
+            .Where(pair => !enemyWords.Any(enemy => rhymeChecker.IsRhyme(enemy, pair.internalWord, 5)))
             .OrderBy(_ => Random.value)
             .Take(2)
             .ToArray();
