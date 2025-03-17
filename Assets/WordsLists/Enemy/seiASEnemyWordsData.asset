@@ -70,9 +70,20 @@ MonoBehaviour:
   - displayWord: "\u76EE\u6A19"
     internalWord: "\u3082\u304F\u3072\u3087\u3046"
     voiceClip: {fileID: 8300000, guid: 146ab99cdc4e24efb9854b2cdb67ed59, type: 3}
-  - displayWord: "\u5929\u30D1"
-    internalWord: "\u3066\u3093\u3071"
-    voiceClip: {fileID: 8300000, guid: 0b208acc6f5bb4759a37a6ad87357b88, type: 3}
   - displayWord: "\u88DC\u6B20"
     internalWord: "\u307B\u3051\u3064"
     voiceClip: {fileID: 8300000, guid: bc0b75124a0a34836877481b5e7ea9bd, type: 3}
+  specialEnemyWordPairs:
+  - displayWord: "\u88DC\u6B20"
+    internalWord: "\u307B\u3051\u3064"
+    voiceClip: {fileID: 8300000, guid: bc0b75124a0a34836877481b5e7ea9bd, type: 3}
+  - displayWord: "\u88DC\u6B20"
+    internalWord: "\u307B\u3051\u3064"
+    voiceClip: {fileID: 8300000, guid: bc0b75124a0a34836877481b5e7ea9bd, type: 3}
+  criticalEnemyWordPairs:
+  - displayWord: "\u5929\u30D1"
+    internalWord: "\u3066\u3093\u3071"
+    voiceClip: {fileID: 8300000, guid: 0b208acc6f5bb4759a37a6ad87357b88, type: 3}
+  - displayWord: "\u5929\u30D1"
+    internalWord: "\u3066\u3093\u3071"
+    voiceClip: {fileID: 8300000, guid: 0b208acc6f5bb4759a37a6ad87357b88, type: 3}

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Fungus;
 using DG.Tweening; // DOTween の名前空間
 
 public class RhymeButton : MonoBehaviour
@@ -9,6 +10,7 @@ public class RhymeButton : MonoBehaviour
     [SerializeField] private Image buttonBackground;  // ボタン背景部分の Image
     [SerializeField] private Color defaultColor = Color.white;   // 初期状態の色
     [SerializeField] private Color selectedColor = Color.green;    // 選択状態の色
+    [SerializeField] private Flowchart flowchart;
 
     // 吹き出し用Prefab（吹き出し内にTextなどを含む）
     [SerializeField] private GameObject speechBubblePrefab;
@@ -83,24 +85,40 @@ public class RhymeButton : MonoBehaviour
         // 吹き出しを生成して、ボタンのテキストを反映（アニメーション付き）
         ShowSpeechBubble();
 
-        // ▼ 特別な処理：もし internalPlayerWord が "せきずい" だったら PlaySISAnimation を呼ぶ
-        if (internalPlayerWord == "せきずい")
-        {
-            var sisAnimator = FindObjectOfType<PlaySISAnimation>();
-            if (sisAnimator != null)
-            {
-                StartCoroutine(PlayAnimationAndContinue(sisAnimator));
-            }
-            else
-            {
-                Debug.LogWarning("PlaySISAnimation をアタッチしたオブジェクトが見つかりませんでした。");
-                ExecuteOtherProcesses();
-            }
-        }
-        else
-        {
-            ExecuteOtherProcesses();
-        }
+
+      switch (internalPlayerWord)
+{
+    case "せきずい":
+        flowchart.ExecuteBlock("脊髄");
+        break;
+
+    case "ぶべつ":
+        flowchart.ExecuteBlock("侮蔑");
+        break;
+    case "ビッグマウス":
+        flowchart.ExecuteBlock("ビッグマウス");
+        break;
+    case "こうどう":
+        flowchart.ExecuteBlock("行動");
+        break;
+    case "デジハリ" :
+        flowchart.ExecuteBlock("デジハリ");
+        break;
+    case "ぼけつ":
+        flowchart.ExecuteBlock("墓穴");
+        break;
+    case "てんぱ":
+        flowchart.ExecuteBlock("天パ");
+        break;
+    case "かき":
+        flowchart.ExecuteBlock("牡蠣");
+        break;
+
+    default:
+        ExecuteOtherProcesses();
+        break;
+}
+
     }
 
     /// <summary>
@@ -116,7 +134,7 @@ public class RhymeButton : MonoBehaviour
     /// <summary>
     /// 既存の処理をまとめたメソッド
     /// </summary>
-    private void ExecuteOtherProcesses()
+    public void ExecuteOtherProcesses()
     {
         isSelected = true;
         ChangeButtonColor(selectedColor);
